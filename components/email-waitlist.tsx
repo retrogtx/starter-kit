@@ -31,7 +31,7 @@ export default function EmailWaitlist() {
   };
 
   return (
-    <div className="max-w-md">
+    <div className="max-w-md w-full">
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="email"
