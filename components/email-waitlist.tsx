@@ -31,8 +31,7 @@ export default function EmailWaitlist() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4">Join our Waitlist</h2>
+    <div className="max-w-md">
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="email"
