@@ -21,17 +21,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.id = user.id;
       }
       return token;
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.id as string;
-      }
-      return session;
-    },
-    async redirect({ url, baseUrl }) {
-      if (url.startsWith("/")) return `${baseUrl}${url}`
-      else if (new URL(url).origin === baseUrl) return url
-      return baseUrl + "/dashboard"
-    },
+    }
   },
 })

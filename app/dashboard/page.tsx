@@ -1,5 +1,20 @@
-import { auth } from "@/auth"
+import { auth, signOut } from "@/auth"
 import { redirect } from "next/navigation"
+
+function SignOutButton() {
+  async function handleSignOut() {
+    'use server'
+    await signOut()
+  }
+
+  return (
+    <form action={handleSignOut}>
+      <button className="bg-white text-black font-bold py-2 px-4 rounded">
+        Sign Out
+      </button>
+    </form>
+  )
+}
 
 export default async function DashboardPage() {
   const session = await auth()
@@ -11,8 +26,8 @@ export default async function DashboardPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-4xl font-bold mb-4">Welcome to your Dashboard</h1>
-      <p className="text-xl">Hello, {session.user?.name || 'User'}!</p>
+      <p className="text-xl mb-4">Hello, {session.user?.name || 'User'}!</p>
+      <SignOutButton />
     </div>
   )
 }
-
