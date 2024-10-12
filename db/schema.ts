@@ -76,3 +76,11 @@ export const authenticators = pgTable(
     }),
   })
 );
+
+export const waitlistUsers = pgTable("waitlist_users", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  email: text("email").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
