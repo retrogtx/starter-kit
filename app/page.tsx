@@ -5,6 +5,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import Particles from "@/components/ui/particles";
 import { Navbar } from "@/components/navbar";
+import Safari from "@/components/ui/safari";
 
 export default function Home() {
   return (
@@ -28,9 +29,16 @@ export default function Home() {
             By Amrit.
           </span>
         </div>
-        <EmailWaitlist />
-        <div>
-          <SignIn />
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <EmailWaitlist />
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <SignIn />
+          </div>
+        </div>
+        <div className="w-full h-screen"> {/* Parent container with full viewport size */}
+          <div className="relative w-full h-full"> {/* Explicit size */}
+            <Safari url="magicui.design" className="w-full h-full" />
+          </div>
         </div>
       </main>
     </div>
