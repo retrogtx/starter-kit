@@ -25,30 +25,26 @@ export default function Home() {
           </AnimatedShinyText>
         </div>
         <div className="text-center max-w-4xl mx-auto z-10">
-
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Accelerate your Indie Journey with this Starter.
           </h1>
-
           <p className="text-xl mb-8 text-gray-200">
             Designed to help you launch your next project faster by <a href="https://x.com/amritwt" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-300 transition-colors">@amritwt</a> ❤️
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center space-y-4">
+        <div className="flex flex-col items-center justify-center space-y-4 mb-8 w-full">
           <EmailWaitlist />
-          <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="flex flex-col justify-center">
             <SignIn />
           </div>
         </div>
-        <div className="w-full h-screen relative overflow-hidden flex items-center justify-center">
-          <div className="max-w-5xl mx-auto w-full">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-50 blur-xl -z-10"></div>
-              <div className="bg-gray-900 rounded-lg overflow-hidden relative z-10">
-                <div className="relative">
-                  <BorderBeam className="rounded-xl absolute inset-0" size={500} />
-                  <Safari url="starter.com" className="w-full h-full" />
-                </div>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-50 blur-xl"></div>
+            <div className="bg-gray-900 rounded-lg overflow-hidden relative z-10">
+              <div className="relative">
+                <BorderBeam className="rounded-xl absolute inset-0" size={200} />
+                <Safari url="starter.com" className="w-full h-full" />
               </div>
             </div>
           </div>
