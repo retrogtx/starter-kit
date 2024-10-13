@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Particles from "@/components/ui/particles";
 import { Navbar } from "@/components/navbar";
 import Safari from "@/components/ui/safari";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 export default function Home() {
   return (
@@ -39,9 +40,17 @@ export default function Home() {
             <SignIn />
           </div>
         </div>
-        <div className="w-full h-screen"> {/* Parent container with full viewport size */}
-          <div className="relative w-full h-full"> {/* Explicit size */}
-            <Safari url="starter.com" className="w-full h-full" />
+        <div className="w-full h-screen relative overflow-hidden flex items-center justify-center">
+          <div className="max-w-5xl mx-auto w-full">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-50 blur-xl -z-10"></div>
+              <div className="bg-gray-900 rounded-lg overflow-hidden relative z-10">
+                <div className="relative">
+                  <BorderBeam className="rounded-xl absolute inset-0" size={500} />
+                  <Safari url="starter.com" className="w-full h-full" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
