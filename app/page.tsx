@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <div className="w-full h-screen"> {/* Parent container with full viewport size */}
           <div className="relative w-full h-full"> {/* Explicit size */}
-            <Safari url="magicui.design" className="w-full h-full" />
+            <Safari url="starter.com" className="w-full h-full" />
           </div>
         </div>
       </main>
