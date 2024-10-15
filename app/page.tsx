@@ -24,7 +24,7 @@ export default function Home() {
         className="absolute inset-0 w-full h-full -z-10"
         quantity={200}
       />
-      <main className="flex-grow flex flex-col items-center justify-center px-4 py-12 relative z-10 mt-16 space-y-8">
+      <main className="flex-grow flex flex-col items-center justify-center px-4 py-12 relative z-10 mt-16 space-y-6">
         <div
           className={cn(
             "group rounded-full border border-black/5 bg-neutral-100 text-sm text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
@@ -59,28 +59,32 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-50 blur-xl"></div>
-            <div className="bg-gray-900 rounded-lg overflow-hidden relative z-10">
-              <div className="relative">
-                <BorderBeam
-                  className="rounded-xl absolute inset-0"
-                  size={200}
-                />
-                <Safari url="starter.com" className="w-full h-full" />
-              </div>
-            </div>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-3xl"></div>
+          <div className="absolute inset-0 -inset-x-20 h-[150%] bg-gradient-to-t from-black via-black to-transparent opacity-80 z-30"></div>
+          <div className="relative z-20 overflow-hidden rounded-lg">
+            <BorderBeam size={250} duration={12} delay={9} className="absolute inset-0 z-20" />
+            <Safari url="starter.com" className="w-full h-full relative z-10" />
           </div>
         </div>
-          <Accordion type="single" collapsible className="w-1/2">
+        
+        <div className="relative z-40 w-full py-4">
+          <Accordion type="single" collapsible className="w-11/12 max-w-4xl mx-auto">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is Starter?</AccordionTrigger>
               <AccordionContent>
-                Starter is a project starter kit that helps you launch your next project faster.
+                Starter is a project starter kit that helps you launch your next
+                project faster.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
+              <AccordionTrigger>What is Starter?</AccordionTrigger>
+              <AccordionContent>
+                Starter is a project starter kit that helps you launch your next
+                project faster.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
               <AccordionTrigger>Is it styled?</AccordionTrigger>
               <AccordionContent>
                 Yes. It comes with default styles that matches the other
@@ -95,8 +99,15 @@ export default function Home() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        <PricingComponent />
-<EmailWaitlist />
+        </div>
+        
+        <div className="relative z-50 w-full">
+          <PricingComponent />
+        </div>
+        
+        <div className="mt-4">
+          <EmailWaitlist />
+        </div>
       </main>
     </div>
   );

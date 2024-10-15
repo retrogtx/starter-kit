@@ -14,13 +14,9 @@ export function PricingComponent() {
     <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Choose the right plan for you
-          </h2>
-          <p className="mt-4 text-xl text-gray-300">
-            Simple, transparent pricing that grows with you.
-          </p>
-        </div>
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Here is a plan</h2>
+          <p className="mt-2 text-lg text-gray-300">Simple pricing that grows with you</p>
+        </div>  
         <div className="mt-8 flex justify-center items-center space-x-4">
           <span className="text-white">Monthly</span>
           <Switch
