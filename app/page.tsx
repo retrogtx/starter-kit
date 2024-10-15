@@ -53,7 +53,6 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col items-center justify-center space-y-4 mb-8 w-full">
-          <EmailWaitlist />
           <div className="flex flex-col justify-center">
             <Button asChild>
               <Link href="/plans">Get Started</Link>
@@ -97,6 +96,7 @@ export default function Home() {
             </AccordionItem>
           </Accordion>
         <PricingComponent />
+<EmailWaitlist />
       </main>
     </div>
   );
