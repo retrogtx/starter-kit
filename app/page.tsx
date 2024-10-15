@@ -6,15 +6,9 @@ import Particles from "@/components/ui/particles";
 import { Navbar } from "@/components/navbar";
 import Safari from "@/components/ui/safari";
 import { BorderBeam } from "@/components/ui/border-beam";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { PricingComponent } from "@/components/pricing-component";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { QnA } from "@/components/qna";
 
 export default function Home() {
   return (
@@ -61,7 +55,7 @@ export default function Home() {
         </div>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-3xl"></div>
-          <div className="absolute inset-0 -inset-x-20 h-[150%] bg-gradient-to-t from-black via-black to-transparent opacity-80 z-30"></div>
+          <div className="absolute inset-0 -inset-x-20 h-[150%] bg-gradient-to-t from-black via-black to-transparent opacity-100 z-30"></div>
           <div className="relative z-20 overflow-hidden rounded-lg">
             <BorderBeam size={250} duration={12} delay={9} className="absolute inset-0 z-20" />
             <Safari url="starter.com" className="w-full h-full relative z-10" />
@@ -69,43 +63,9 @@ export default function Home() {
         </div>
         
         <div className="relative z-40 w-full py-4">
-          <Accordion type="single" collapsible className="w-11/12 max-w-4xl mx-auto">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What is Starter?</AccordionTrigger>
-              <AccordionContent>
-                Starter is a project starter kit that helps you launch your next
-                project faster.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>What is Starter?</AccordionTrigger>
-              <AccordionContent>
-                Starter is a project starter kit that helps you launch your next
-                project faster.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if
-                you prefer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <QnA />
         </div>
-        
-        <div className="relative z-50 w-full">
-          <PricingComponent />
-        </div>
-        
-        <div className="mt-4">
+        <div className="relative z-40 py-4 flex justify-center">
           <EmailWaitlist />
         </div>
       </main>
