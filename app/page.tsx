@@ -12,11 +12,12 @@ import { QnA } from "@/components/qna";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden flex flex-col">
+    <div className="relative min-h-screen w-full overflow-hidden flex flex-col bg-black text-white">
       <Navbar />
       <Particles
-        className="absolute inset-0 w-full h-full -z-10"
+        className="absolute inset-0 w-full h-full z-0"
         quantity={200}
+        color="#ffffff"
       />
       <main className="flex-grow flex flex-col items-center justify-center px-4 py-12 relative z-10 mt-16 space-y-6">
         <div
