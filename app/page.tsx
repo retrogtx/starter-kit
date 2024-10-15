@@ -55,6 +55,7 @@ export default function Home() {
         </div>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-3xl"></div>
+          <div className="absolute inset-0 -inset-x-20 h-[150%] bg-gradient-to-t from-black via-black to-transparent opacity-100 z-10"></div>
           <div className="absolute inset-0 -inset-x-20 h-[150%] bg-gradient-to-t from-black via-black to-transparent opacity-100 z-30"></div>
           <div className="relative z-20 overflow-hidden rounded-lg">
             <BorderBeam size={250} duration={12} delay={9} className="absolute inset-0 z-20" />
