@@ -1,4 +1,3 @@
-import SignIn from "@/components/sign-in";
 import EmailWaitlist from "@/components/email-waitlist";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
@@ -13,6 +12,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { PricingComponent } from "@/components/pricing-component";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -53,7 +55,9 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center space-y-4 mb-8 w-full">
           <EmailWaitlist />
           <div className="flex flex-col justify-center">
-            <SignIn />
+            <Button asChild>
+              <Link href="/plans">Get Started</Link>
+            </Button>
           </div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,11 +73,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Accordion type="single" collapsible className="w-full">
+        </div>
+          <Accordion type="single" collapsible className="w-1/2">
             <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionTrigger>What is Starter?</AccordionTrigger>
               <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+                Starter is a project starter kit that helps you launch your next project faster.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -91,7 +96,7 @@ export default function Home() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
+        <PricingComponent />
       </main>
     </div>
   );
