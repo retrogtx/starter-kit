@@ -9,6 +9,7 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import Link from "next/link";
 import { QnA } from "@/components/qna";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import FeaturesSectionDemo from "@/components/blocks/features-section-demo-2";
 
 export default function Home() {
   return (
@@ -63,7 +64,9 @@ export default function Home() {
             <Safari url="starter.com" className="w-full h-full relative z-10" />
           </div>
         </div>
-        
+        <div className="relative z-40 min-h-screen bg-white dark:bg-black">
+        <FeaturesSectionDemo />
+        </div>
         <div className="relative z-40 w-full py-4">
           <QnA />
         </div>
