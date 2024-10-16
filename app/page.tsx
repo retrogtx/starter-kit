@@ -9,7 +9,8 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import Link from "next/link";
 import { QnA } from "@/components/qna";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import FeaturesSectionDemo from "@/components/blocks/features-section-demo-2";
+import FeaturesSectionDemo from "@/components/ui/features-section-demo-2";
+import Avatars from "@/components/avatars";
 
 export default function Home() {
   return (
@@ -62,6 +63,10 @@ export default function Home() {
           <div className="relative z-20 overflow-hidden rounded-lg">
             <BorderBeam size={250} duration={12} delay={9} className="absolute inset-0 z-20" />
             <Safari url="starter.com" className="w-full h-full relative z-10" />
+          </div>
+          <div className="flex flex-col justify-center items-center relative z-40">
+            <p className="text-sm text-gray-200 mb-2">Trusted by alotta people (jk this is only for a sample)</p>
+            <Avatars />
           </div>
         </div>
         <div className="relative z-40 min-h-screen bg-white dark:bg-black">

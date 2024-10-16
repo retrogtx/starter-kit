@@ -1,65 +1,68 @@
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
+  IconRocket,
+  IconBrandNextjs,
+  IconBrandTailwind,
+  IconDatabase,
+  IconMail,
+  IconLock,
+  IconPuzzle,
+  IconCode,
 } from "@tabler/icons-react";
 
 export default function FeaturesSectionDemo() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Quick Start",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
+        "Get your project off the ground quickly with our pre-configured setup.",
+      icon: <IconRocket />,
     },
     {
-      title: "Ease of use",
+      title: "Next.js Powered",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
-      icon: <IconEaseInOut />,
+        "Leverage the power of Next.js for server-side rendering and optimal performance. The best ngl.",
+      icon: <IconBrandNextjs />,
     },
     {
-      title: "Pricing like no other",
+      title: "Tailwind CSS Styling",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-      icon: <IconCurrencyDollar />,
+        "Create beautiful, responsive designs effortlessly with Tailwind CSS.",
+      icon: <IconBrandTailwind />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
-      icon: <IconCloud />,
-    },
-    {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-      icon: <IconRouteAltLeft />,
-    },
-    {
-      title: "24/7 Customer Support",
+      title: "PostgreSQL & Drizzle ORM",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
-      icon: <IconHelp />,
+        "Robust database setup with PostgreSQL and easy data management using Drizzle ORM.",
+      icon: <IconDatabase />,
     },
     {
-      title: "Money back guarantee",
+      title: "Email Integration",
       description:
-        "If you donot like EveryAI, we will convince you to like us.",
-      icon: <IconAdjustmentsBolt />,
+        "Seamless email functionality with Resend for transactional emails and notifications.",
+      icon: <IconMail />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
+      title: "Authentication",
+      description:
+        "Secure authentication out of the box with Auth Js.",
+      icon: <IconLock />,
+    },
+    {
+      title: "UI Component Library",
+      description:
+        "Beautiful components from ShadCN, MagicUI, and Aceternity UI.",
+      icon: <IconPuzzle />,
+    },
+    {
+      title: "Developer Friendly",
+      description:
+        "Built for developers, by developers. Easily extensible and customizable.",
+      icon: <IconCode />,
     },
   ];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
       {features.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
