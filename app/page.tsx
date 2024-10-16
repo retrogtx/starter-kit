@@ -6,9 +6,9 @@ import Particles from "@/components/ui/particles";
 import { Navbar } from "@/components/navbar";
 import Safari from "@/components/ui/safari";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { QnA } from "@/components/qna";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export default function Home() {
   return (
@@ -49,9 +49,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center space-y-4 mb-8 w-full">
           <div className="flex flex-col justify-center">
-            <Button asChild>
+            <RainbowButton>
               <Link href="/plans">Get Started</Link>
-            </Button>
+            </RainbowButton>
           </div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
