@@ -9,7 +9,7 @@ function SignOutButton() {
 
   return (
     <form action={handleSignOut}>
-      <button className="bg-white text-black font-bold py-2 px-4 rounded">
+      <button className="bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition-colors">
         Sign Out
       </button>
     </form>
@@ -24,7 +24,7 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="text-center">
       <h1 className="text-4xl font-bold mb-4">Welcome to your Dashboard</h1>
       <p className="text-xl mb-4">Hello, {session.user?.name || 'User'}!</p>
       <SignOutButton />
