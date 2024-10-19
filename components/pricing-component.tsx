@@ -15,7 +15,8 @@ export function PricingComponent() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Here is a plan</h2>
-          <p className="mt-2 text-lg text-gray-300">Simple pricing that grows with you</p>
+          <p className="mt-2 text-lg text-gray-300">Simple pricing that grows with you </p>
+          <p className="mt-2 text-lg text-gray-100">Stripe is not allowed in India. Integrate your own payment service.</p>
         </div>  
         <div className="mt-8 flex justify-center items-center space-x-4">
           <span className="text-white">Monthly</span>

@@ -1,4 +1,5 @@
 import { Calendar, Inbox, Search, Settings, User } from "lucide-react"
+import { signOut } from "@/auth"
 
 import {
   Sidebar,
@@ -24,25 +25,38 @@ import {
 const items = [
   {
     title: "Inbox",
-    url: "#",
+    url: "/plans",
     icon: Inbox,
   },
   {
     title: "Calendar",
-    url: "#",
+    url: "/plans",
     icon: Calendar,
   },
   {
     title: "Search",
-    url: "#",
+    url: "/plans",
     icon: Search,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/plans",
     icon: Settings,
   },
 ]
+
+function SignOutButton() {
+  async function handleSignOut() {
+    'use server'
+    await signOut()
+  }
+
+  return (
+    <form action={handleSignOut}>
+      <button className="w-full text-left">Sign Out</button>
+    </form>
+  )
+}
 
 export function AppSidebar() {
   return (
@@ -69,15 +83,17 @@ export function AppSidebar() {
       <SidebarFooter>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <SidebarMenuButton>
+            <SidebarMenuButton className="w-full">
               <User />
-              <span>Username</span>
+              <span>Profile</span>
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent className="w-56">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Sign Out</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <SignOutButton />
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarFooter>
