@@ -1,29 +1,20 @@
-import NextAuth from "next-auth"
-import { DrizzleAdapter } from "@auth/drizzle-adapter"
-import { db } from "@/db/index"
-import GoogleProvider from "next-auth/providers/google"
+import {  betterAuth } from 'better-auth';
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { db } from "@/db/index";
+import * as schema from "@/db/schema";
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: DrizzleAdapter(db),
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-  ],
-  session: {
-    strategy: "jwt",
-  },
-  pages: {
-    signIn: "/signin",
-  },
-  secret: process.env.AUTH_SECRET,
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
+export const auth = betterAuth({
+  socialProviders: {
+      google: {
+          clientId: process.env.GOOGLE_CLIENT_ID!,
+          clientSecret: process.env.GOOGLE_CLIENT_SECRET!
       }
-      return token;
-    }
   },
-})
+
+  /** if no database is provided, the user data will be stored in memory.
+   * Make sure to provide a database to persist user data **/
+  database: drizzleAdapter(db, {
+    provider: "pg",
+    schema: schema
+  })
+});

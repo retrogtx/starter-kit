@@ -1,5 +1,7 @@
+"use client";
+
 import { Calendar, Inbox, Search, Settings, User } from "lucide-react"
-import { signOut } from "@/auth"
+import { signOut } from "@/lib/auth-client"
 
 import {
   Sidebar,
@@ -46,15 +48,15 @@ const items = [
 ]
 
 function SignOutButton() {
-  async function handleSignOut() {
-    'use server'
-    await signOut()
-  }
-
   return (
-    <form action={handleSignOut}>
-      <button className="w-full text-left">Sign Out</button>
-    </form>
+    <button 
+      onClick={async () => { 
+        await signOut();
+      }}
+      className="w-full text-left px-2 py-1.5 text-sm outline-none relative"
+    >
+      Sign Out
+    </button>
   )
 }
 
